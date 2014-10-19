@@ -51,7 +51,7 @@ class amawal(QtGui.QWidget):
                 hbox2.addWidget(self.p)
 
                 self.setWindowTitle("ⴰⵎⴰⵡⴰⵍ".decode("utf-8"))
-                self.setWindowIcon(QtGui.QIcon("/home/raji/Desktop/python/usr/share/icons/hicolor/128x128/dict.png"))
+                self.setWindowIcon(QtGui.QIcon("dict.png"))
                 self.setGeometry(0,20,450,600)
                 self.setLayout(hbox2)
                 self.show() 
@@ -61,7 +61,8 @@ class amawal(QtGui.QWidget):
 
 
         def translate(self):
-            con = sqlite3.connect("/usr/share/doc/amawal/amawal")
+            con = sqlite3.connect("amawal")
+            #amawal is sqlite database
             cur = con.cursor()
 
             if self.radio1.isChecked():
@@ -115,7 +116,7 @@ def main():
 
     app = QtGui.QApplication(sys.argv)
     app.setStyle(QtGui.QStyleFactory.create("plastique"))
-    QtGui.QSystemTrayIcon(QtGui.QIcon("/home/raji/Desktop/python/usr/share/icons/hicolor/128x128/dict.png"),app).show()
+    QtGui.QSystemTrayIcon(QtGui.QIcon("dict.png"),app).show()
     dict = amawal()
     sys.exit(app.exec_())
 
