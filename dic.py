@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-<<<<<<< HEAD
 #
 # SCRIPT: AmaDic
 # AUTHOR: Mohammed Raji // github.com/MohammedRaji /twitter/@mohammedraji6
@@ -13,10 +12,7 @@
 # PURPOSE: Make a offline amazigh-arabic dictionary for linux   
 #                 
 #          
-##########################################################
-=======
-
->>>>>>> 020af627cdf625eddac0b46ddd4352fa0be90c0b
+#########################################################
 from PySide import QtGui,QtCore
 import sys
 from PySide import *
@@ -37,25 +33,17 @@ class amawal(QtGui.QWidget):
                 self.radio2 = QtGui.QRadioButton("ⵜⴰⵄⵔⴰⴱⵜ".decode('utf-8'))
                 self.radio1.setChecked(True)
 
-<<<<<<< HEAD
                 vbox = QtGui.QHBoxLayout()
-=======
-                vbox = QtGui.QVBoxLayout()
->>>>>>> 020af627cdf625eddac0b46ddd4352fa0be90c0b
+                
                 vbox.addWidget(self.radio1)
                 vbox.addWidget(self.radio2)
                 
                 hbox = QtGui.QHBoxLayout()
                 hbox.addWidget(self.line)
                 hbox.addWidget(self.button)
-<<<<<<< HEAD
-        
-=======
-                ########
-                self.setStyleSheet("QWidget {border:none;border-radius:3px;color :black;font-weight:500; font-size: 10pt}QPushButton{color:#099000;border-style: outset;border-width: 2px;border-radius: 10px;border-color: beige;font: bold 14px;min-width: 10em;padding: 6px;}QLineEdit{background-color:white; color:black}QTextEdit{background-color:#ffffff; color:#000000}")
-                #########
+
                 
->>>>>>> 020af627cdf625eddac0b46ddd4352fa0be90c0b
+
 
                 self.table = QtGui.QTableWidget(0,2)
                 self.table.setHorizontalHeaderLabels(["ⵜⴰⵎⴰⵣⵉⵖⵜ".decode('utf-8'),"ⵜⴰⵄⵔⴰⴱⵜ".decode('utf-8')])
@@ -65,12 +53,6 @@ class amawal(QtGui.QWidget):
                 #bottom
                 self.p = QtGui.QPushButton("ⵅⴼ ⵓⵀⵉⵍ".decode('utf-8'))
                 self.p.clicked.connect(self.about)
-                
-<<<<<<< HEAD
-                
-                
-=======
->>>>>>> 020af627cdf625eddac0b46ddd4352fa0be90c0b
 
 
                 hbox2 = QtGui.QVBoxLayout()
@@ -79,34 +61,22 @@ class amawal(QtGui.QWidget):
                 hbox2.addWidget(self.table)
                 hbox2.addWidget(self.p)
 
-<<<<<<< HEAD
+
                 self.setWindowTitle("AmaDic".decode("utf-8"))
                 self.setWindowIcon(QtGui.QIcon("ico.png"))
-=======
-                self.setWindowTitle("ⴰⵎⴰⵡⴰⵍ".decode("utf-8"))
-                self.setWindowIcon(QtGui.QIcon("dict.png"))
->>>>>>> 020af627cdf625eddac0b46ddd4352fa0be90c0b
+                
                 self.setGeometry(0,20,450,600)
                 self.setLayout(hbox2)
                 self.show() 
 
         def about(self):
-<<<<<<< HEAD
             QtGui.QMessageBox.about(self, "About AmaDic",
                 "<b>AmaDic</b> is a simple dictionary created by Python Language"
                 " \n Copyleft 2014.")
             
-=======
-            self.about=ab()
->>>>>>> 020af627cdf625eddac0b46ddd4352fa0be90c0b
-
-
         def translate(self):
             con = sqlite3.connect("amawal")
-<<<<<<< HEAD
-=======
             #amawal is sqlite database
->>>>>>> 020af627cdf625eddac0b46ddd4352fa0be90c0b
             cur = con.cursor()
 
             if self.radio1.isChecked():
@@ -141,39 +111,15 @@ class amawal(QtGui.QWidget):
                 self.table.setItem(x,0,self.en)
                 self.table.setItem(x,1,self.ar)
                 x += 1
-<<<<<<< HEAD
-=======
-
-class ab(QtGui.QWidget):
-    """docstring for about""" 
-    def __init__(self):
-        super(ab,self).__init__()
-        self.setWindowTitle("About AmaDic")
-        self.tab=QtGui.QTabWidget()
-        
-
-        self.show() 
-        
-
->>>>>>> 020af627cdf625eddac0b46ddd4352fa0be90c0b
         
         
     
 def main():
 
     app = QtGui.QApplication(sys.argv)
-<<<<<<< HEAD
     QtGui.QSystemTrayIcon(QtGui.QIcon("ico.png"),app).show()
-=======
-    app.setStyle(QtGui.QStyleFactory.create("plastique"))
-    QtGui.QSystemTrayIcon(QtGui.QIcon("dict.png"),app).show()
->>>>>>> 020af627cdf625eddac0b46ddd4352fa0be90c0b
     dict = amawal()
     sys.exit(app.exec_())
 
 if __name__ == "__main__":
-<<<<<<< HEAD
     main()
-=======
-    main()
->>>>>>> 020af627cdf625eddac0b46ddd4352fa0be90c0b
